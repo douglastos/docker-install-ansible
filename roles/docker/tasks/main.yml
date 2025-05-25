@@ -1,0 +1,21 @@
+- name: Carregar variáveis específicas da distro
+  include_vars: "{{ ansible_os_family | lower }}.yml"
+
+- name: Instalar dependências
+  package:
+    name: "{{ docker_dependencies }}"
+    state: present
+
+- name: Adicionar repositório do Docker
+  include_tasks: "repos/{{ ansible_os_family | lower }}.yml"
+
+- name: Instalar Docker
+  package:
+    name: docker-ce
+    state: latest
+
+- name: Iniciar e habilitar o Docker
+  service:
+    name: docker
+    state: started
+    enabled: true

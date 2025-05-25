@@ -1,0 +1,8 @@
+- name: Adicionar repositório do Docker
+  yum_repository:
+    name: docker-ce
+    description: Docker CE Stable
+    baseurl: https://download.docker.com/linux/centos/7/x86_64/stable
+    gpgcheck: yes
+    gpgkey: https://download.docker.com/linux/centos/gpg
+    enabled: yes

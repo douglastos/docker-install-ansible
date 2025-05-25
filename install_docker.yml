@@ -1,0 +1,5 @@
+- name: Instalar Docker em qualquer Linux
+  hosts: docker_hosts
+  become: true
+  roles:
+    - docker

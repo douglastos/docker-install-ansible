@@ -18,7 +18,7 @@ This project uses Ansible to install Docker on any supported Linux distribution 
 
 ## 📦 Project Structure
 
-```
+```bash
 docker-install/
 ├── install_docker.yml         # Main playbook
 ├── hosts                      # Inventory file
